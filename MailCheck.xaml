@@ -97,7 +97,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="MailCheck" sap:VirtualizedContainerService.HintSize="1172,1402" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MailCheck" sap:VirtualizedContainerService.HintSize="1170,1972" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="IAFilin@1cbit.ru" Name="MailAccount" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="Message" />
@@ -107,7 +107,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" DeleteMessages="{x:Null}" Email="{x:Null}" FilterExpressionCharacterSet="{x:Null}" Password="{x:Null}" Port="{x:Null}" SecurePassword="{x:Null}" Server="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DisplayName="Get IMAP Email unread Messages List With Parsing " EnableSSL="True" FilterExpression="[&quot;SUBJECT &quot;&quot;Parsing&quot;&quot;&quot;]" sap:VirtualizedContainerService.HintSize="454,231" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" Messages="[Message]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" SecureConnection="Auto" Top="3" UseISConnection="True">
+    <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" DeleteMessages="{x:Null}" Email="{x:Null}" FilterExpressionCharacterSet="{x:Null}" Password="{x:Null}" Port="{x:Null}" SecurePassword="{x:Null}" Server="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" ConnectionId="331171c0-eb96-419a-914a-edb994a9cb4a" DisplayName="Get IMAP Email unread Messages List With Parsing " EnableSSL="True" FilterExpression="[&quot;SUBJECT &quot;&quot;Parsing&quot;&quot;&quot;]" sap:VirtualizedContainerService.HintSize="454,801" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" Messages="[Message]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" SecureConnection="Auto" Top="3" UseISConnection="True">
       <ui:GetIMAPMailMessages.ConnectionDetailsBackupSlot>
         <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="IntegrationService">
           <usau:BackupSlot.BackupValues>
@@ -140,7 +140,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="418,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[&quot;C:\Users\IAFilin\Documents\UiPath\MOEX_Data_Extraction\Mail Attachments&quot;&quot;C:\Users\IAFilin\Documents\UiPath\MOEX_Data_Extraction\Mail Attachments\Config.xlsx&quot;]" />
+          <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="418,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="Mail Attachments\Config.xlsx" />
           <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each mail" sap:VirtualizedContainerService.HintSize="418,623" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Message]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="snm:MailMessage">
