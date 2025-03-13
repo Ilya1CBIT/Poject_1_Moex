@@ -133,7 +133,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Getting_data_from_the_MOEX_website" sap:VirtualizedContainerService.HintSize="1170,3934" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Getting_data_from_the_MOEX_website" sap:VirtualizedContainerService.HintSize="1170,2487" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="03 - Март" Name="StartMonth" />
       <Variable x:TypeArguments="x:String" Name="EndMonth" />
@@ -141,47 +141,37 @@
       <Variable x:TypeArguments="x:String" Name="EndYear" />
       <Variable x:TypeArguments="x:String" Default="2" Name="StartDay" />
       <Variable x:TypeArguments="x:String" Default="4" Name="EndDay" />
-      <Variable x:TypeArguments="x:String" Default="USD/RUB - Доллар США к российскому рублю" Name="CurrencyUSD" />
-      <Variable x:TypeArguments="x:String" Default="JPY/RUB - Японская йена к российскому рублю" Name="CurrencyJPU" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_jpyData" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_usdData" />
+      <Variable x:TypeArguments="x:String" Name="currencyCode" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_currencyData" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ExcelExtractConfigData - Invoke Workflow File (ExcelExtractConfigData.xaml)" sap:VirtualizedContainerService.HintSize="586,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ExcelExtractConfigData.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str_StartMonth">[StartMonth]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str_EndMonth">[EndMonth]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str_StartYear">[StartYear]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str_EndYear">[EndYear]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str_StartDay">[StartDay]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_str_EndDay">[EndDay]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Sequence Working with browser" sap:VirtualizedContainerService.HintSize="586,2409" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Sequence Working with browser" sap:VirtualizedContainerService.HintSize="518,963" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Новая вкладка" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="552,2317" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="768209de-6337-4100-bfbd-5ca51030a34a" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Новая вкладка" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,871" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="768209de-6337-4100-bfbd-5ca51030a34a" Version="V2" WindowResize="Maximize">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,2077" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,631" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Срочный рынок'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Срочный рынок'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="moex.com" CVScreenId="dc651c6f-1f20-414e-ba88-5879a57843d5" ContentHash="BxIFMSa_A0aiES5SIdCNTg" CvTextArea="453, 320, 125, 17" CvTextArgument="Cpo4HbIŇ pblHOK" CvType="Text" DesignTimeRectangle="442, 305, 147, 48" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Срочный рынок' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Срочный рынок' tag='A' type='' class='header-menu-item header-menu-item--medium header-menu-item--gray header-menu-item--has-padding' check:innerText='Срочный рынок' /&gt;" Guid="304147dd-1f0d-48a8-84b6-a4e044c678b0" InformativeScreenshot="785e0bfccc480229c8e5a67ae2f9a78f.png" IsResponsive="True" Reference="Q-buPLdRoUarMVgK3VUZoQ/jrbd_h0hdkiRwWPFIPnG1A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Московская Биржа' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V5" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -208,7 +198,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <TryCatch DisplayName="Try Catch License Agreement" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch DisplayName="Try Catch License Agreement" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -287,657 +277,40 @@
                   </Sequence>
                 </TryCatch.Finally>
               </TryCatch>
-              <Sequence DisplayName="Sequence Selecting USD\RUB Currency" sap:VirtualizedContainerService.HintSize="484,954" sap2010:WorkflowViewState.IdRef="Sequence_25">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SequenceSelectingCurrency - Invoke Workflow File (SequenceSelectingJPYRUBCurrency.xaml)" sap:VirtualizedContainerService.HintSize="416,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SequenceSelectingCurrency.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="StartYear">[StartYear]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="StartMonth">[StartMonth]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="StartDay">[StartDay]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="EndYear">[EndYear]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="EndMonth">[EndMonth]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="EndDay">[EndDay]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_str_currencyCode">USD/RUB - Доллар США к российскому рублю</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_currencyData">[dt_usdData]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click drop-down menu currency" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                  <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="ba9e6ee8-14e1-41fb-9fe5-ff7e00bc2244" ContentHash="JYiBJ-dre0yMvPzEL_H_dA" CvElementArea="581, 518, 754, 48" CvType="InputBox" DesignTimeRectangle="584, 528, 725, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='ui-select__placeholder' parentid='app' tag='DIV' type='' aaname='USD/RUB - Доллар США к российскому рублю' check:innerText='USD/RUB - Доллар США к российскому рублю' /&gt;" Guid="13f46f9d-9efe-4240-8e01-f228f7ba272f" InformativeScreenshot="b7ce4492da4efb6684d8aa7b3a748bec.png" Reference="Q-buPLdRoUarMVgK3VUZoQ/TP21_sVuF06aTbSNe-Fb6Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                      <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                          <uix:Target CVScreenId="ba9e6ee8-14e1-41fb-9fe5-ff7e00bc2244" CvTextArea="584, 500, 122, 16" CvTextArgument="Bbi6ephTe BanhOTbI:" CvType="Text" DesignTimeRectangle="584, 488, 750, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='app' tag='LABEL' type='' class='ui-select__label' aaname=' Выберите валюты: ' check:innerText='Выберите валюты:' /&gt;" Guid="de99b546-23bc-44e3-aa0f-a97196ef6b89" SearchSteps="FuzzySelector, CV" />
-                        </scg:List>
-                      </uix:TargetAnchorable.Anchors>
-                    </uix:TargetAnchorable>
-                  </uix:NClick.Target>
-                  <uix:NClick.VerifyOptions>
-                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                      <uix:VerifyExecutionOptions.Retry>
-                        <InArgument x:TypeArguments="x:Boolean" />
-                      </uix:VerifyExecutionOptions.Retry>
-                      <uix:VerifyExecutionOptions.Timeout>
-                        <InArgument x:TypeArguments="x:Double" />
-                      </uix:VerifyExecutionOptions.Timeout>
-                    </uix:VerifyExecutionOptions>
-                  </uix:NClick.VerifyOptions>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </uix:NClick>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'USD\RUB currency'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_27" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                  <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="beae6760-7418-46fc-bdac-c9ec5add84d9" ContentHash="EMXTNsmqxUqx4e-FQJHn0Q" DesignTimeRectangle="601, 682, 429, 23" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, CurrencyUSD)]" FuzzyMatches="10000" Guid="4ea1df9c-f424-45b3-ab11-a925b92f4e2b" ImageBase64="" InformativeScreenshot="c9e0ef0fde81b1caf76ff33b077093a4.png" Reference="Q-buPLdRoUarMVgK3VUZoQ/8hHvAjIqgUOYZ35Qb7VBHg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                  </uix:NClick.Target>
-                  <uix:NClick.VerifyOptions>
-                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                      <uix:VerifyExecutionOptions.Retry>
-                        <InArgument x:TypeArguments="x:Boolean" />
-                      </uix:VerifyExecutionOptions.Retry>
-                      <uix:VerifyExecutionOptions.Timeout>
-                        <InArgument x:TypeArguments="x:Double" />
-                      </uix:VerifyExecutionOptions.Timeout>
-                    </uix:VerifyExecutionOptions>
-                  </uix:NClick.VerifyOptions>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </uix:NClick>
-                <uix:NMouseScroll KeyModifiers="{x:Null}" sap2010:Annotation.AnnotationText="Scroll down so that the calendar appears in the right way" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="3" Version="V4">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </uix:NMouseScroll>
-                <Sequence DisplayName="Sequence Start Date Setting" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_16">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click start date calendar drop-down" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="420861ed-e57b-4e9f-8a64-47ae61abd4c6" DesignTimeRectangle="745, 581, 138, 44" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='keysParams' tag='LABEL' class='em_text_red date_btn' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;span&amp;gt;label' parentclass='date_block' idx='1' /&gt;" Guid="ae9d6925-8e58-4340-95f8-cfe05e735852" InformativeScreenshot="e53779fcf7d2f615b7f6f165f2631f1d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="81bbf75c-5a0e-40ff-8571-9dcc961753e8" CvTextArea="659, 595, 78, 14" CvTextArgument="3ha4eHnA C" CvType="Text" DesignTimeRectangle="661, 591, 76, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='caption' parentid='app' tag='SPAN' aaname='Значения с' type='' check:text='Значения с' /&gt;" Guid="17a212ae-320e-4a9c-a20e-e1f262a4b250" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click start year drop-down menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="569cfdf4-9ad4-4c23-8149-88e314a41b2b" CvElementArea="931, 437, 134, 56" CvType="InputBox" DesignTimeRectangle="933, 439, 131, 52" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-select__activator -selected' tag='DIV' aaname='' /&gt;" Guid="a1045849-e8c1-4af4-a642-866159bc9287" InformativeScreenshot="1bbc518ff85acca7f6e59d1dc0fa0ee8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="569cfdf4-9ad4-4c23-8149-88e314a41b2b" CvTextArea="732, 542, 342, 16" CvTextArgument="NH BT CP 4T NT C6 BC" CvType="Text" DesignTimeRectangle="706, 533, 397, 45" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='DIV' aaname='' check:innerText='ПНВТСРЧТПТСБВС' /&gt;" Guid="875dca6a-cee1-4b12-bfcb-47b10771e8b4" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right start year" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" DesignTimeRectangle="950, 546, 80, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='ui-select-option__content' tag='DIV' /&gt;&quot;, StartYear)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='ui-select-option__content' tag='DIV' type='' check:innerText='{0}' /&gt;&quot;, StartYear)]" Guid="b53df907-8cce-45b7-a8dd-86fd6157985a" ImageBase64="" InformativeScreenshot="55ee1863abad654ed3252b6003419e67.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click start month drop-down menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="8fb7afe4-8fd5-449c-a142-b54dec6a5f00" CvElementArea="723, 437, 202, 56" CvType="InputBox" DesignTimeRectangle="726, 440, 197, 52" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-select__activator -selected' tag='DIV' aaname='' /&gt;" Guid="412ea131-47da-4120-b976-929d735a7ded" InformativeScreenshot="ad7c4bc3cab35c67de1574f3151f1fb7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="8fb7afe4-8fd5-449c-a142-b54dec6a5f00" DesignTimeRectangle="584, 369, 278, 55" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl class='date_block' parentid='app' tag='SPAN' type='' aaname=' ' /&gt;" Guid="b52ebb82-25f4-4065-9a01-7d2c2cf337b6" SearchSteps="FuzzySelector" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right start month" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="7e757f9b-c9c6-45ab-83f9-f86fe208f985" DesignTimeRectangle="742, 607, 146, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='ui-select-option__content' tag='DIV' /&gt;&quot;, StartMonth)]" Guid="a14b8eda-d13c-486b-99fe-82f917225741" ImageBase64="" InformativeScreenshot="858c38f0e2cbce7a925065ca639e0899.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right day" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="241ad163-e686-4007-9462-cd1779b597a7" DesignTimeRectangle="826, 579, 52, 40" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' tag='DIV' /&gt;&quot;, StartDay)]" FuzzyMatches="10000" Guid="617caf4f-c378-461c-b19f-765eff40c23a" ImageBase64="" InformativeScreenshot="6320c82eee86ee2fefb4f8c85d6c89e0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                </Sequence>
-                <Sequence DisplayName="Sequence End Date Setting" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '04.03.202504.03.2025(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_24" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" DesignTimeRectangle="897, 296, 173, 55" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='keysParams' type='' tag='LABEL' class='em_text_red date_btn' aaname='' /&gt;" Guid="be52bad7-5a49-4fa9-8db9-71820098dad4" InformativeScreenshot="6dbbefa23a94137587d00685b41d5d91.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="3128e94f-73bd-4bc0-9dbb-f5a73d4914d3" CvTextArea="865, 440, 22, 13" CvTextArgument="no" CvType="Text" DesignTimeRectangle="866, 308, 21, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='по' class='caption' parentid='app' tag='SPAN' type='' check:innerText='по' /&gt;" Guid="af9bbba5-8d29-498d-94f4-455b7e605501" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click end year drop-down menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="569cfdf4-9ad4-4c23-8149-88e314a41b2b" CvElementArea="931, 437, 134, 56" CvType="InputBox" DesignTimeRectangle="933, 439, 131, 52" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-select__activator -selected' tag='DIV' aaname='' /&gt;" Guid="a1045849-e8c1-4af4-a642-866159bc9287" InformativeScreenshot="1bbc518ff85acca7f6e59d1dc0fa0ee8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="569cfdf4-9ad4-4c23-8149-88e314a41b2b" CvTextArea="732, 542, 342, 16" CvTextArgument="NH BT CP 4T NT C6 BC" CvType="Text" DesignTimeRectangle="706, 533, 397, 45" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='DIV' aaname='' check:innerText='ПНВТСРЧТПТСБВС' /&gt;" Guid="875dca6a-cee1-4b12-bfcb-47b10771e8b4" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right end year" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="f13c59cc-1660-41ef-8118-3cab11f34746" DesignTimeRectangle="1157, 474, 81, 20" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='ui-select-option' type='' tag='DIV' aaname='{0}' check:innerText='{0}' /&gt;&quot;, EndYear)]" Guid="b12469e0-13b0-4775-aaa7-c2b242f0f16e" ImageBase64="" InformativeScreenshot="1909eb6f986409eec24bb4cfe9c6431a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click end month drop-down menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="3cca0c66-ad72-44d8-9969-bf14a3dd4359" CvElementArea="930, 474, 202, 57" CvType="InputBox" DesignTimeRectangle="934, 477, 197, 52" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-select__activator -selected' tag='DIV' aaname='' /&gt;" Guid="37037665-fd50-4774-b6b3-ac8639602b6d" InformativeScreenshot="d223b22d0819c032685ef4f36571a4d1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
-                            <uix:Target CVScreenId="3cca0c66-ad72-44d8-9969-bf14a3dd4359" CvTextArea="940, 580, 342, 16" CvTextArgument="NH BT CP 4T NT C6 BC" CvType="Text" DesignTimeRectangle="914, 571, 397, 45" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='DIV' aaname='' check:innerText='ПНВТСРЧТПТСБВС' /&gt;" Guid="bfb80332-eb8c-4df6-a485-d0e55806c322" SearchSteps="FuzzySelector, CV" />
-                            <uix:Target DesignTimeRectangle="897, 406, 173, 55" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='keysParams' type='' tag='LABEL' class='em_text_red date_btn' aaname='' /&gt;" Guid="5bad5ff9-b7a1-4c2d-aa6e-b5620305491d" SearchSteps="FuzzySelector" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right end month" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" DesignTimeRectangle="950, 722, 146, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='ui-select-option__content' idx='2' tag='DIV' /&gt;&quot;, EndMonth)]" Guid="689b7f14-23ea-49b3-95e9-52a5857e9c07" ImageBase64="" InformativeScreenshot="8a39b8eef3c81924a6f1eedc87991930.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right day" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225" sap2010:WorkflowViewState.IdRef="NClick_23" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="bcf07171-b16a-453c-a7b3-1657544f3da8" DesignTimeRectangle="1191, 572, 53, 40" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' idx='2' tag='DIV' /&gt;&quot;, EndDay)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' type='' tag='DIV' class='ui-calendar__cell -day' check:innerText='{0}' /&gt;&quot;, EndDay)]" Guid="2ec3fec4-40eb-4c7d-9cc1-e681ece1e4d9" InformativeScreenshot="74c848e4c8b30839c6df999bd6b6f89c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Показать'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_25" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="898a7fd8-b3a2-4988-a226-288ce7627064" CvElementArea="1093, 278, 154, 59" CvTextArea="1112, 299, 110, 18" CvTextArgument="NOKA3ATb" CvType="Button" DesignTimeRectangle="1095, 280, 149, 55" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='dateTimeRowButton ui-button -primary -normal' aaname=' Показать ' check:innerText='ПОКАЗАТЬ' /&gt;" Guid="2cbe7279-797b-4bcc-98e6-ed94b0e58774" InformativeScreenshot="6835f739c92e43074a2e7fa08d8ade71.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="898a7fd8-b3a2-4988-a226-288ce7627064" CvElementArea="1093, 278, 154, 59" CvTextArea="1112, 299, 110, 18" CvTextArgument="NOKA3ATb" CvType="Button" DesignTimeRectangle="1116, 295, 107, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='ui-button__label' parentid='app' tag='SPAN' type='' aaname=' Показать ' check:innerText='ПОКАЗАТЬ' /&gt;" Guid="7ecf033f-9f5f-47a2-86ef-bf9914d13326" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                </Sequence>
-                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_usdData]" DisplayName="Extract Table Data 'Extract Table Data'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='false' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Дата' ReferenceIdx='0' Name='(A) Дата'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Курс промежуточного клиринга Значение' ReferenceIdx='1' Name='Курс промежуточного клиринга Значение' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Курс промежуточного клиринга Время' ReferenceIdx='2' Name='Курс промежуточного клиринга Время' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Курс основного клиринга Значение' ReferenceIdx='3' Name='(B) Значение'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Курс основного клиринга Время' ReferenceIdx='4' Name='(C) Время'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Дата' attr='fulltext' /&gt;&lt;column name='Курс промежуточного клиринга Значение' attr='fulltext' /&gt;&lt;column name='Курс промежуточного клиринга Время' attr='fulltext' /&gt;&lt;column name='Курс основного клиринга Значение' attr='fulltext' /&gt;&lt;column name='Курс основного клиринга Время' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                  <uix:NExtractData.Target>
-                    <uix:TargetAnchorable BrowserURL="https://www.moex.com/ru/derivatives/currency-rate.aspx?currency=JPY_RUB" DesignTimeRectangle="661, 565, 600, 635" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='app' tag='TABLE' /&gt;" Guid="bd5d5607-04cc-426c-bad9-c25cc69ac0fa" InformativeScreenshot="60bb03447df09ef86362f3950e5cb6a7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара JPY-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                  </uix:NExtractData.Target>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </uix:NExtractData>
-              </Sequence>
-              <Sequence DisplayName="Sequence Selecting JPY\RUB Currency" sap:VirtualizedContainerService.HintSize="484,947" sap2010:WorkflowViewState.IdRef="Sequence_26">
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SequenceSelectingCurrency - Invoke Workflow File (SequenceSelectingJPYRUBCurrency.xaml)" sap:VirtualizedContainerService.HintSize="416,197" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SequenceSelectingCurrency.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="StartYear">[StartYear]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="StartMonth">[StartMonth]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="StartDay">[StartDay]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="EndYear">[EndYear]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="EndMonth">[EndMonth]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="EndDay">[EndDay]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_str_currencyCode">JPY/RUB - Японская йена к российскому рублю</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_currencyData">[dt_jpyData]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'drop-down menu currency'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                  <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="ba9e6ee8-14e1-41fb-9fe5-ff7e00bc2244" CvElementArea="581, 518, 754, 48" CvType="InputBox" DesignTimeRectangle="584, 528, 725, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='ui-select__placeholder' parentid='app' tag='DIV' type='' aaname='USD/RUB - Доллар США к российскому рублю' check:innerText='USD/RUB - Доллар США к российскому рублю' /&gt;" Guid="13f46f9d-9efe-4240-8e01-f228f7ba272f" InformativeScreenshot="b7ce4492da4efb6684d8aa7b3a748bec.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                      <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                          <uix:Target CVScreenId="ba9e6ee8-14e1-41fb-9fe5-ff7e00bc2244" CvTextArea="584, 500, 122, 16" CvTextArgument="Bbi6ephTe BanhOTbI:" CvType="Text" DesignTimeRectangle="584, 488, 750, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='app' tag='LABEL' type='' class='ui-select__label' aaname=' Выберите валюты: ' check:innerText='Выберите валюты:' /&gt;" Guid="de99b546-23bc-44e3-aa0f-a97196ef6b89" SearchSteps="FuzzySelector, CV" />
-                        </scg:List>
-                      </uix:TargetAnchorable.Anchors>
-                    </uix:TargetAnchorable>
-                  </uix:NClick.Target>
-                  <uix:NClick.VerifyOptions>
-                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                      <uix:VerifyExecutionOptions.Retry>
-                        <InArgument x:TypeArguments="x:Boolean" />
-                      </uix:VerifyExecutionOptions.Retry>
-                      <uix:VerifyExecutionOptions.Timeout>
-                        <InArgument x:TypeArguments="x:Double" />
-                      </uix:VerifyExecutionOptions.Timeout>
-                    </uix:VerifyExecutionOptions>
-                  </uix:NClick.VerifyOptions>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </uix:NClick>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'JPU\RUB' currency" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                  <uix:NClick.Target>
-                    <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="beae6760-7418-46fc-bdac-c9ec5add84d9" DesignTimeRectangle="674, 533, 326, 19" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, CurrencyJPU)]" FuzzyMatches="10000" Guid="4ea1df9c-f424-45b3-ab11-a925b92f4e2b" ImageBase64="" InformativeScreenshot="279aa2e1e668fdfd61c49a78ee31c620.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                  </uix:NClick.Target>
-                  <uix:NClick.VerifyOptions>
-                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                      <uix:VerifyExecutionOptions.Retry>
-                        <InArgument x:TypeArguments="x:Boolean" />
-                      </uix:VerifyExecutionOptions.Retry>
-                      <uix:VerifyExecutionOptions.Timeout>
-                        <InArgument x:TypeArguments="x:Double" />
-                      </uix:VerifyExecutionOptions.Timeout>
-                    </uix:VerifyExecutionOptions>
-                  </uix:NClick.VerifyOptions>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </uix:NClick>
-                <uix:NMouseScroll KeyModifiers="{x:Null}" sap2010:Annotation.AnnotationText="Scroll down so that the calendar appears in the right way" Direction="Down" DisplayName="Mouse Scroll" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="3" Version="V4">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </uix:NMouseScroll>
-                <Sequence DisplayName="Sequence Start Date Setting" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_27">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click start date calendar drop-down" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_30" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="420861ed-e57b-4e9f-8a64-47ae61abd4c6" DesignTimeRectangle="745, 581, 138, 44" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='keysParams' tag='LABEL' class='em_text_red date_btn' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;span&amp;gt;label' parentclass='date_block' idx='1' /&gt;" Guid="ae9d6925-8e58-4340-95f8-cfe05e735852" InformativeScreenshot="e53779fcf7d2f615b7f6f165f2631f1d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="81bbf75c-5a0e-40ff-8571-9dcc961753e8" CvTextArea="659, 595, 78, 14" CvTextArgument="3ha4eHnA C" CvType="Text" DesignTimeRectangle="661, 591, 76, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='caption' parentid='app' tag='SPAN' aaname='Значения с' type='' check:text='Значения с' /&gt;" Guid="17a212ae-320e-4a9c-a20e-e1f262a4b250" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click start year drop-down menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_31" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="569cfdf4-9ad4-4c23-8149-88e314a41b2b" CvElementArea="931, 437, 134, 56" CvType="InputBox" DesignTimeRectangle="933, 439, 131, 52" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-select__activator -selected' tag='DIV' aaname='' /&gt;" Guid="a1045849-e8c1-4af4-a642-866159bc9287" InformativeScreenshot="1bbc518ff85acca7f6e59d1dc0fa0ee8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="569cfdf4-9ad4-4c23-8149-88e314a41b2b" CvTextArea="732, 542, 342, 16" CvTextArgument="NH BT CP 4T NT C6 BC" CvType="Text" DesignTimeRectangle="706, 533, 397, 45" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='DIV' aaname='' check:innerText='ПНВТСРЧТПТСБВС' /&gt;" Guid="875dca6a-cee1-4b12-bfcb-47b10771e8b4" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right start year" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_32" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" DesignTimeRectangle="950, 546, 80, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='ui-select-option__content' tag='DIV' /&gt;&quot;, StartYear)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='ui-select-option__content' tag='DIV' type='' check:innerText='{0}' /&gt;&quot;, StartYear)]" Guid="b53df907-8cce-45b7-a8dd-86fd6157985a" ImageBase64="" InformativeScreenshot="55ee1863abad654ed3252b6003419e67.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click start month drop-down menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_33" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="8fb7afe4-8fd5-449c-a142-b54dec6a5f00" CvElementArea="723, 437, 202, 56" CvType="InputBox" DesignTimeRectangle="726, 440, 197, 52" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-select__activator -selected' tag='DIV' aaname='' /&gt;" Guid="412ea131-47da-4120-b976-929d735a7ded" InformativeScreenshot="ad7c4bc3cab35c67de1574f3151f1fb7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="8fb7afe4-8fd5-449c-a142-b54dec6a5f00" DesignTimeRectangle="584, 369, 278, 55" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl class='date_block' parentid='app' tag='SPAN' type='' aaname=' ' /&gt;" Guid="b52ebb82-25f4-4065-9a01-7d2c2cf337b6" SearchSteps="FuzzySelector" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right start month" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_34" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="7e757f9b-c9c6-45ab-83f9-f86fe208f985" DesignTimeRectangle="742, 607, 146, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='ui-select-option__content' tag='DIV' /&gt;&quot;, StartMonth)]" Guid="a14b8eda-d13c-486b-99fe-82f917225741" ImageBase64="" InformativeScreenshot="858c38f0e2cbce7a925065ca639e0899.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right day" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,50" sap2010:WorkflowViewState.IdRef="NClick_35" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="241ad163-e686-4007-9462-cd1779b597a7" DesignTimeRectangle="826, 579, 52, 40" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' tag='DIV' /&gt;&quot;, StartDay)]" FuzzyMatches="10000" Guid="617caf4f-c378-461c-b19f-765eff40c23a" ImageBase64="" InformativeScreenshot="6320c82eee86ee2fefb4f8c85d6c89e0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                </Sequence>
-                <Sequence DisplayName="Sequence End Date Setting" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_28">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '04.03.202504.03.2025(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_36" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" DesignTimeRectangle="897, 296, 173, 55" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='keysParams' type='' tag='LABEL' class='em_text_red date_btn' aaname='' /&gt;" Guid="be52bad7-5a49-4fa9-8db9-71820098dad4" InformativeScreenshot="6dbbefa23a94137587d00685b41d5d91.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="3128e94f-73bd-4bc0-9dbb-f5a73d4914d3" CvTextArea="865, 440, 22, 13" CvTextArgument="no" CvType="Text" DesignTimeRectangle="866, 308, 21, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='по' class='caption' parentid='app' tag='SPAN' type='' check:innerText='по' /&gt;" Guid="af9bbba5-8d29-498d-94f4-455b7e605501" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click end year drop-down menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_37" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="569cfdf4-9ad4-4c23-8149-88e314a41b2b" CvElementArea="931, 437, 134, 56" CvType="InputBox" DesignTimeRectangle="933, 439, 131, 52" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-select__activator -selected' tag='DIV' aaname='' /&gt;" Guid="a1045849-e8c1-4af4-a642-866159bc9287" InformativeScreenshot="1bbc518ff85acca7f6e59d1dc0fa0ee8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="569cfdf4-9ad4-4c23-8149-88e314a41b2b" CvTextArea="732, 542, 342, 16" CvTextArgument="NH BT CP 4T NT C6 BC" CvType="Text" DesignTimeRectangle="706, 533, 397, 45" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='DIV' aaname='' check:innerText='ПНВТСРЧТПТСБВС' /&gt;" Guid="875dca6a-cee1-4b12-bfcb-47b10771e8b4" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right end year" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_38" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="f13c59cc-1660-41ef-8118-3cab11f34746" DesignTimeRectangle="1157, 474, 81, 20" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl class='ui-select-option' type='' tag='DIV' aaname='{0}' check:innerText='{0}' /&gt;&quot;, EndYear)]" Guid="b12469e0-13b0-4775-aaa7-c2b242f0f16e" ImageBase64="" InformativeScreenshot="1909eb6f986409eec24bb4cfe9c6431a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click end month drop-down menu" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_39" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="3cca0c66-ad72-44d8-9969-bf14a3dd4359" CvElementArea="930, 474, 202, 57" CvType="InputBox" DesignTimeRectangle="934, 477, 197, 52" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' class='ui-select__activator -selected' tag='DIV' aaname='' /&gt;" Guid="37037665-fd50-4774-b6b3-ac8639602b6d" InformativeScreenshot="d223b22d0819c032685ef4f36571a4d1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
-                            <uix:Target CVScreenId="3cca0c66-ad72-44d8-9969-bf14a3dd4359" CvTextArea="940, 580, 342, 16" CvTextArgument="NH BT CP 4T NT C6 BC" CvType="Text" DesignTimeRectangle="914, 571, 397, 45" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='DIV' aaname='' check:innerText='ПНВТСРЧТПТСБВС' /&gt;" Guid="bfb80332-eb8c-4df6-a485-d0e55806c322" SearchSteps="FuzzySelector, CV" />
-                            <uix:Target DesignTimeRectangle="897, 406, 173, 55" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='keysParams' type='' tag='LABEL' class='em_text_red date_btn' aaname='' /&gt;" Guid="5bad5ff9-b7a1-4c2d-aa6e-b5620305491d" SearchSteps="FuzzySelector" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right end month" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_40" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" DesignTimeRectangle="950, 722, 146, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='ui-select-option__content' idx='2' tag='DIV' /&gt;&quot;, EndMonth)]" Guid="689b7f14-23ea-49b3-95e9-52a5857e9c07" ImageBase64="" InformativeScreenshot="8a39b8eef3c81924a6f1eedc87991930.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click the right day" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="NClick_41" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="bcf07171-b16a-453c-a7b3-1657544f3da8" DesignTimeRectangle="1191, 572, 53, 40" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' idx='2' tag='DIV' /&gt;&quot;, EndDay)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' type='' tag='DIV' class='ui-calendar__cell -day' check:innerText='{0}' /&gt;&quot;, EndDay)]" Guid="2ec3fec4-40eb-4c7d-9cc1-e681ece1e4d9" InformativeScreenshot="74c848e4c8b30839c6df999bd6b6f89c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V5" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Показать'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,50" sap2010:WorkflowViewState.IdRef="NClick_42" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="moex.com/ru/derivatives/currency-rate.aspx" CVScreenId="898a7fd8-b3a2-4988-a226-288ce7627064" CvElementArea="1093, 278, 154, 59" CvTextArea="1112, 299, 110, 18" CvTextArgument="NOKA3ATb" CvType="Button" DesignTimeRectangle="1095, 280, 149, 55" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='dateTimeRowButton ui-button -primary -normal' aaname=' Показать ' check:innerText='ПОКАЗАТЬ' /&gt;" Guid="2cbe7279-797b-4bcc-98e6-ed94b0e58774" InformativeScreenshot="6835f739c92e43074a2e7fa08d8ade71.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара USD-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="FuzzySelector, CV" Version="V5" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="898a7fd8-b3a2-4988-a226-288ce7627064" CvElementArea="1093, 278, 154, 59" CvTextArea="1112, 299, 110, 18" CvTextArgument="NOKA3ATb" CvType="Button" DesignTimeRectangle="1116, 295, 107, 25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='ui-button__label' parentid='app' tag='SPAN' type='' aaname=' Показать ' check:innerText='ПОКАЗАТЬ' /&gt;" Guid="7ecf033f-9f5f-47a2-86ef-bf9914d13326" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
-                  </uix:NClick>
-                </Sequence>
-                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_jpyData]" DisplayName="Extract Table Data 'Extract Table Data'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='false' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Дата' ReferenceIdx='0' Name='(D) Дата'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Курс промежуточного клиринга Значение' ReferenceIdx='1' Name='Курс промежуточного клиринга Значение' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Курс промежуточного клиринга Время' ReferenceIdx='2' Name='Курс промежуточного клиринга Время' IsDeleted='true'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Курс основного клиринга Значение' ReferenceIdx='3' Name='(E) Значение'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Курс основного клиринга Время' ReferenceIdx='4' Name='(F) Время'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Дата' attr='fulltext' /&gt;&lt;column name='Курс промежуточного клиринга Значение' attr='fulltext' /&gt;&lt;column name='Курс промежуточного клиринга Время' attr='fulltext' /&gt;&lt;column name='Курс основного клиринга Значение' attr='fulltext' /&gt;&lt;column name='Курс основного клиринга Время' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="768209de-6337-4100-bfbd-5ca51030a34a" Version="V4">
-                  <uix:NExtractData.Target>
-                    <uix:TargetAnchorable BrowserURL="https://www.moex.com/ru/derivatives/currency-rate.aspx?currency=JPY_RUB" DesignTimeRectangle="661, 565, 600, 635" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='app' tag='TABLE' /&gt;" Guid="5f3e3450-d1ce-4559-bec8-96c3e7b5834a" InformativeScreenshot="60bb03447df09ef86362f3950e5cb6a7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Валютная пара JPY-RUB — курс сегодня на валютном рынке — Московская Биржа | Рынки' /&gt;" SearchSteps="Selector" Version="V5" Visibility="Interactive" />
-                  </uix:NExtractData.Target>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </uix:NExtractData>
-              </Sequence>
+              </ui:InvokeWorkflowFile>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
@@ -952,7 +325,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
     </Sequence>
-    <ui:JoinDataTables DataTable1="[dt_usdData]" DataTable2="[dt_jpyData]" DisplayName="Join Data Tables with USD &amp; JPU" sap:VirtualizedContainerService.HintSize="586,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Full" OutputDataTable="[global_dt_Currency]">
+    <ui:JoinDataTables DataTable1="[dt_usdData]" DataTable2="[dt_jpyData]" DisplayName="Join Data Tables with USD &amp; JPU" sap:VirtualizedContainerService.HintSize="518,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Full" OutputDataTable="[global_dt_Currency]">
       <ui:JoinDataTables.Arguments>
         <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
           <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -971,27 +344,27 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:JoinDataTables>
-    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="(G) Результат" DataTable="[global_dt_Currency]" DisplayName="Add Result Data Column" sap:VirtualizedContainerService.HintSize="586,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
+    <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="(G) Результат" DataTable="[global_dt_Currency]" DisplayName="Add Result Data Column" sap:VirtualizedContainerService.HintSize="518,218" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[global_dt_Currency]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,940" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[global_dt_Currency]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="518,996" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="504,580" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="504,636" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="470,520" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="470,576" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -1052,7 +425,7 @@
                 </Catch>
               </TryCatch.Catches>
               <TryCatch.Finally>
-                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="468,25" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="468,81" sap2010:WorkflowViewState.IdRef="Sequence_32">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1071,7 +444,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Write DataTable Excel File - Invoke Workflow File (Write DataTable Excel File.xaml)" sap:VirtualizedContainerService.HintSize="586,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="Info" UnSafe="False" WorkflowFileName="Write DataTable Excel File.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="True" DisplayName="Write DataTable Excel File - Invoke Workflow File (Write DataTable Excel File.xaml)" sap:VirtualizedContainerService.HintSize="518,195" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="Info" UnSafe="False" WorkflowFileName="Write DataTable Excel File.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>

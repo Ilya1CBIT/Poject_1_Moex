@@ -169,7 +169,9 @@
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[global_dt_Currency.AsEnumerable().
-              Where(Function(row) DateTime.ParseExact(row("(A) Дата").ToString, "dd.MM.yyyy", System.Globalization.CultureInfo.GetCultureInfo("ru-RU")).ToString("MMMM") = month).CopyToDataTable()]</InArgument>
+    Where(Function(row) DateTime.ParseExact(row("(A) Дата").ToString(), "dd.MM.yyyy", System.Globalization.CultureInfo.GetCultureInfo("ru-RU")).ToString("MMMM") = month).
+    OrderBy(Function(row) DateTime.ParseExact(row("(A) Дата").ToString(), "dd.MM.yyyy", System.Globalization.CultureInfo.GetCultureInfo("ru-RU"))).
+    CopyToDataTable()]</InArgument>
               </Assign.Value>
             </Assign>
             <Delay sap2010:Annotation.AnnotationText="added so that excel works properly" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="570,153" sap2010:WorkflowViewState.IdRef="Delay_1">
@@ -203,7 +205,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet($&quot;{month}&quot;)]" DisplayName="Write Filtered DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,191" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[dt_filtered]" />
+                            <ueab:WriteRangeX Destination="[Excel.Sheet($&quot;{month}&quot;)]" DisplayName="Write Filtered DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,191" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[dt_filtered]" />
                             <ueab:AutoFitX Columns="True" DisplayName="Autofit Range" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="AutoFitX_1" Range="[Excel.Sheet($&quot;{month}&quot;)]" Rows="False" />
                           </Sequence>
                         </ActivityAction>

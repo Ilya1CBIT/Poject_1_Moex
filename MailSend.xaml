@@ -105,7 +105,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MailSend" sap:VirtualizedContainerService.HintSize="1187,569.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MailSend" sap:VirtualizedContainerService.HintSize="1170,759" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="rowCount" />
       <Variable x:TypeArguments="x:String" Name="resultWord" />
@@ -123,7 +123,7 @@
         <InArgument x:TypeArguments="x:Int32">[global_dt_Currency.Rows.Count]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[(rowCount Mod 10 = 1) And (rowCount Mod 100 &lt;&gt; 11)]" DisplayName="If &quot;строки&quot;" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[(rowCount Mod 10 = 1) And (rowCount Mod 100 &lt;&gt; 11)]" DisplayName="If &quot;строки&quot;" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -200,7 +200,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" Files="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" Port="{x:Null}" ReplyTo="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" Server="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentInputMode="Builder" Body="[rowCount.ToString + &quot; &quot; + resultWord]" ConnectionId="8cf88f8e-0f1e-415f-995d-c89c5f7a9d93" DisplayName="Send SMTP Email" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,361" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="False" SecureConnection="Auto" Subject="Parsing_Result" To="filin290245@yandex.ru" UseISConnection="True">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" Files="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" Port="{x:Null}" ReplyTo="{x:Null}" ResourceAttachments="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" Server="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentInputMode="Builder" Body="[&quot;В данном excel файле &quot; + rowCount.ToString + &quot; &quot; + resultWord]" ConnectionId="8cf88f8e-0f1e-415f-995d-c89c5f7a9d93" DisplayName="Send SMTP Email" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,370" sap2010:WorkflowViewState.IdRef="SendMail_3" IgnoreCRL="False" IsBodyHtml="False" SecureConnection="Auto" Subject="Parsing_Result" To="filin290245@yandex.ru" UseISConnection="True">
       <ui:SendMail.AttachmentsBackup>
         <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Builder">
           <usau:BackupSlot.BackupValues>
@@ -233,5 +233,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:SendMail>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Письмо с файлом Excel отправлено!&quot;]" />
   </Sequence>
 </Activity>
